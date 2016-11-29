@@ -3,10 +3,14 @@
 ## GIT
 1. References:
     - gitref.org
+    - git-scm.com
+    - git-scm.com/book/en/v2
 2. Config:
     - git config --global user.name "myname"
     - git config --global user.email "youremail@email.com"
-    - git config --list
+    - display config: git config --list
+3. Command:
+    - undo changes: git checkout -f
 
 ## Rails
 1. Server:
