@@ -15,3 +15,9 @@
 ## Rails
 1. Server:
     - rails s / rails server
+
+## Deploy in Heroku
+1. Installation:
+    - https://devcenter.heroku.com/articles/heroku-command-line
+2. Login:
+    - heroku login
