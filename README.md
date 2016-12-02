@@ -86,18 +86,25 @@ Then execute `bundle install --without production`
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'sass-rails', '~> 5.0'
 ```
-3. create `custom.css.scss` in `app/assets/stylesheets`
-4. copy into `custom.css.scss`
+3. bundle install --without production
+4. create `custom.css.scss` in `app/assets/stylesheets`
+5. copy into `custom.css.scss`
 ```sh
 @import "bootstrap-sprockets";
 @import "bootstrap";
 ```
-5. copy into `application.js` in `app/assets/javascripts` (right after jquery_ujs)
+6. copy into `application.js` in `app/assets/javascripts` (right after jquery_ujs)
 ```sh
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
 ```
+
+### Notes:
+To add custom css you have to add it in `custom.css.scss` above
+1. @import "bootstrap-sprockets";
+2. @import "bootstrap";
+
 
 ## Others
 1. Mockup/wireframing tools:
