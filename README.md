@@ -109,6 +109,24 @@ To add custom css you have to add it in `custom.css.scss` above
 2. @import "bootstrap";
 
 
+## Validation
+source: [Active record validation](http://guides.rubyonrails.org/active_record_validations.html)
+Regex Tools: [Regex](http://rubular.com)
+### User Validations
+1. Username must be present and unique
+    ```sh
+    validates :username, presence: true,
+                uniqueness: { case_sensitive: false }
+                length: { minimum: 3, maximum: 25 }
+    VALID_EMAIL_REGEX= /\A[\w+\-.]+@[a-z\d\-.]+\[a-z]+\z/i
+    validates :email, presence: true,
+                uniqueness: { case_sensitive: false }
+                length: { maximum: 105 },
+                format: { with: VALID_EMAIL_REGEX }
+    ```
+2. Email must be present and unique
+3. Validate email format using regex
+
 ## Others
 1. Mockup/wireframing tools:
     - balsamiq.com
