@@ -11,6 +11,8 @@
     - display config: git config --list
 3. Command:
     - undo changes: git checkout -f
+4. Create new branch and checkout:
+    - git checkout -b create-users
 
 ## Rails
 1. Server:
@@ -18,6 +20,7 @@
 2. Migration:
     - `rails generate migration create_articles`
     - `rails generate migration add_description_to_articles`
+    - `rails generate migration create_users`
 3. Rollback:
     - back 1 step: `rake db:rollback`
     - back n step: `rake db:rollback STEP=n`
@@ -29,7 +32,7 @@
     - start: `rails console`
     - rails console gives us direct access to database
     - test connection to article table: `Article.all`
-    - reload the console: `reload!`
+    - reload the console(if there're changing in ruby files): `reload!`
     - ask if there is any error when commit the query: `article.errors.any?` 
         - return true/false
         - article = Article.new
