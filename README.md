@@ -65,6 +65,8 @@
         - `Article.find(4).destroy`
 
 ## Heroku
+Heroku doesn't support sqlite3 so move sqlite3 gem to development. Add `pg` and `rails_12factor` gem to production.
+Then execute `bundle install --without production`
 1. Installation:
     - https://devcenter.heroku.com/articles/heroku-command-line
 2. Login:
@@ -73,4 +75,32 @@
     - `git push heroku yourbranch:master`
 4. Rename:
     - `heroku rename newname`
+5. Add table:
+    - `heroku run rake db:migrate`
 
+## Bootstrap Sass
+### Installation
+1. source: https://github.com/twbs/bootstrap-sass
+2. copy into Gemfile (should be before sass-rails)
+```sh
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'sass-rails', '~> 5.0'
+```
+3. create `custom.css.scss` in `app/assets/stylesheets`
+4. copy into `custom.css.scss`
+```sh
+@import "bootstrap-sprockets";
+@import "bootstrap";
+```
+5. copy into `application.js` in `app/assets/javascripts` (right after jquery_ujs)
+```sh
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap-sprockets
+```
+
+## Others
+1. Mockup/wireframing tools:
+    - balsamiq.com
+2. Gem repository:
+    - rubygems.org
