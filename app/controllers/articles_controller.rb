@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 
   def update
     # render plain: params[:article].inspect
-
+    # debugger
     if @article.update(article_params)
       flash[:success] = "Article was successfully updated"
       redirect_to article_path(@article)
@@ -53,6 +53,7 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
+    # whitelist the values of article
     def article_params
       params.require(:article).permit(:title, :description)
     end
