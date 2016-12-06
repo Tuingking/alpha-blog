@@ -21,6 +21,7 @@
     - `rails generate migration create_articles`
     - `rails generate migration add_description_to_articles`
     - `rails generate migration create_users`
+    - `rails generate migration add_user_id_to_articles`
 3. Rollback:
     - back 1 step: `rake db:rollback`
     - back n step: `rake db:rollback STEP=n`
@@ -66,6 +67,26 @@
         - `article.destroy`
         - or
         - `Article.find(4).destroy`
+6. Association
+    - article = Article.new(title:"this is an article",
+                            description: "new article desc",
+                            user: User.first)
+    - NOTE:
+        - if using ==> user: User.first (object)
+        - if using ==> user_id : 15 (integer)
+
+## Debugging
+
+### Byebug Gem
+by using `byebug` gem installed then we can use it to debug our application simply by:
+1. put `debugger` in any line of code you want to debug
+2. if there is an error then the server will stop running and enter debugger console
+3. useful command to debug:
+    - `article_params` check parameter sent
+    - `n`: go to next line
+
+### In html
+type `<%= debug(params) if Rails.env.development? %>`
 
 ## Heroku
 Heroku doesn't support sqlite3 so move sqlite3 gem to development. Add `pg` and `rails_12factor` gem to production.
@@ -109,7 +130,7 @@ To add custom css you have to add it in `custom.css.scss` above
 2. @import "bootstrap";
 
 
-## Validation
+## Validation Active Records
 source: [Active record validation](http://guides.rubyonrails.org/active_record_validations.html)
 Regex Tools: [Regex](http://rubular.com)
 ### User Validations
