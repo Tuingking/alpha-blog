@@ -102,6 +102,12 @@ Then execute `bundle install --without production`
 5. Add table:
     - `heroku run rake db:migrate`
 
+## Login
+1. Add `has_secure_password` to User Model
+2. Add gem `bycrypt` to Gemfile
+3. Add `password_digest` (name ==> MUST be exact) attribute to users table 
+
+
 ## Bootstrap Sass
 ### Installation
 1. source: https://github.com/twbs/bootstrap-sass
