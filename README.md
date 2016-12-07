@@ -42,6 +42,7 @@
     - DESC table: `Article`
     - SELECT all: `Article.all`
     - SELECT by id: `Article.find(id)`
+    - WHERE: `Article.where(:user_id =>nil)
     - INSERT to table:
         1. using `.new`
             1. `article = Article.new`
