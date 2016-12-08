@@ -159,6 +159,9 @@ Regex Tools: [Regex](http://rubular.com)
 2. Email must be present and unique
 3. Validate email format using regex
 
+## Before action
+`before_action` works in order
+
 ## Others
 1. Mockup/wireframing tools:
     - balsamiq.com
