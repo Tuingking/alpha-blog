@@ -54,6 +54,10 @@
             2. `article.save`
         3. using `.create`: directly create and commit(.save) query
             1. `Article.create(title: "Third article", description: "3rd desc")`
+        4. association insert:
+            1. user = User.find(8)
+            2. article = user.articles.build(title:"xxx", description: "xxx")
+            3. article.save
     - SELECT 1st, 2nd ... nth element:
         - `Article.first`
         - `Article.second`
