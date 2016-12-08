@@ -20,9 +20,9 @@ class ArticlesController < ApplicationController
     # display what param is passing to this action
     # render plain: params[:article].inspect
     
-    # debugger
     @article = Article.new(article_params)
-    @article.user = current_user
+    @article.user = User.first
+    debugger
     if @article.save
       flash[:success] = "Article was successfully created"
       redirect_to article_path(@article)

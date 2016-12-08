@@ -106,6 +106,9 @@ Then execute `bundle install --without production`
     - `heroku rename newname`
 5. Add table:
     - `heroku run rake db:migrate`
+6. Drop database:
+    - `heroku pg:reset DATABASE`
+    - type you-application-name (follow instruction)
 
 ## Login
 1. Add `has_secure_password` to User Model
